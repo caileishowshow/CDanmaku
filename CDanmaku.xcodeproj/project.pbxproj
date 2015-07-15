@@ -14,6 +14,8 @@
 		F7DF25071B5603A9006A2785 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7DF25061B5603A9006A2785 /* Images.xcassets */; };
 		F7DF250A1B5603A9006A2785 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7DF25081B5603A9006A2785 /* LaunchScreen.xib */; };
 		F7DF25161B5603A9006A2785 /* CDanmakuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DF25151B5603A9006A2785 /* CDanmakuTests.m */; };
+		F7DF25211B560452006A2785 /* CDanmakuText.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DF25201B560452006A2785 /* CDanmakuText.m */; };
+		F7DF25241B56094C006A2785 /* CDanmakuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DF25231B56094C006A2785 /* CDanmakuView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		F7DF250F1B5603A9006A2785 /* CDanmakuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDanmakuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DF25141B5603A9006A2785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7DF25151B5603A9006A2785 /* CDanmakuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDanmakuTests.m; sourceTree = "<group>"; };
+		F7DF251F1B560452006A2785 /* CDanmakuText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDanmakuText.h; sourceTree = "<group>"; };
+		F7DF25201B560452006A2785 /* CDanmakuText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDanmakuText.m; sourceTree = "<group>"; };
+		F7DF25221B56094C006A2785 /* CDanmakuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDanmakuView.h; sourceTree = "<group>"; };
+		F7DF25231B56094C006A2785 /* CDanmakuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDanmakuView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,10 @@
 				F7DF25061B5603A9006A2785 /* Images.xcassets */,
 				F7DF25081B5603A9006A2785 /* LaunchScreen.xib */,
 				F7DF24F91B5603A8006A2785 /* Supporting Files */,
+				F7DF251F1B560452006A2785 /* CDanmakuText.h */,
+				F7DF25201B560452006A2785 /* CDanmakuText.m */,
+				F7DF25221B56094C006A2785 /* CDanmakuView.h */,
+				F7DF25231B56094C006A2785 /* CDanmakuView.m */,
 			);
 			path = CDanmaku;
 			sourceTree = "<group>";
@@ -221,7 +231,9 @@
 			files = (
 				F7DF25021B5603A8006A2785 /* ViewController.m in Sources */,
 				F7DF24FF1B5603A8006A2785 /* AppDelegate.m in Sources */,
+				F7DF25211B560452006A2785 /* CDanmakuText.m in Sources */,
 				F7DF24FC1B5603A8006A2785 /* main.m in Sources */,
+				F7DF25241B56094C006A2785 /* CDanmakuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
