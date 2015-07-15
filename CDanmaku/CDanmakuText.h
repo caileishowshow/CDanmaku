@@ -18,14 +18,26 @@ typedef enum : NSUInteger {
 
 
 
-@interface CDanmakuText : CATextLayer
+@interface CDanmakuText : CATextLayer{
+    Float32 fontSize;
+}
 
 
 @property(nonatomic,strong)NSString *textString;//弹幕显示文字
 @property(nonatomic,strong)UIColor *textColor;//弹幕颜色
 @property(nonatomic,assign)CDanmakuTextPosition cdanmuPostion;//弹幕位置
 
+
 //新的初始化方法
 -(instancetype)initWithString:(NSString *)text withColor:(UIColor *)color;
+
+
+//设置弹幕位置
+-(void)setYPosition:(CGPoint)positionSize;
+
+//移动
+-(void)move;
+
+
 
 @end

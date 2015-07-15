@@ -8,6 +8,14 @@
 
 #import "CDanmakuView.h"
 #import "CDanmakuText.h"
+
+@interface CDanmakuView(){
+    NSTimer *_commentTimer;//计时器
+}
+
+@end
+
+
 @implementation CDanmakuView
 
 
@@ -19,41 +27,30 @@
 }
 
 
-//-(instancetype)initWithFrame:(CGRect)frame{
-//    if (self= [super initWithFrame:frame]) {
-//        [self start];
-//    }
-//    return self;
-//}
-//
-//
-//-(instancetype)init{
-//    if ([super init]) {
-//        [self start];
-//    }
-//    return self;
-//计算frame
-//}
-
 -(void)start{//开始弹幕
-    
-    //初始化弹幕类
-    CDanmakuText *cDanmakuText = [[CDanmakuText alloc] initWithString:@"aaaaa" withColor:[UIColor redColor]];
-    cDanmakuText.frame = CGRectMake(-self.bounds.size.width, 0, 50, 30);
-
-    [self.layer addSublayer:cDanmakuText];
+    _commentTimer = [NSTimer timerWithTimeInterval:0.5f
+                                            target:self selector:@selector(_commentTimerFired)
+                                          userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_commentTimer forMode:NSRunLoopCommonModes];
     
     
-    //动画
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.repeatCount = 0;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    animation.duration = 3;
-    animation.removedOnCompletion = NO;
-    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(self.bounds.size.width, 0)];
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(-cDanmakuText.frame.size.width, 0)];
-    [cDanmakuText addAnimation:animation forKey:@"Comment"];
 
 }
+
+-(void)_commentTimerFired{
+    for (int i=0; i<10; i++) {
+        //初始化弹幕类
+        CDanmakuText *cDanmakuText = [[CDanmakuText alloc] initWithString:@"aaaaa" withColor:[UIColor redColor]];
+        [cDanmakuText setPosition:CGPointMake(self.bounds.size.width, i*20)];
+        
+        [self.layer addSublayer:cDanmakuText];
+        
+        
+        [cDanmakuText move];
+    }
+}
+
+
+
 
 @end
