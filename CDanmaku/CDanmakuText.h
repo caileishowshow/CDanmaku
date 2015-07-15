@@ -26,7 +26,7 @@ typedef enum : NSUInteger {
 @property(nonatomic,strong)NSString *textString;//弹幕显示文字
 @property(nonatomic,strong)UIColor *textColor;//弹幕颜色
 @property(nonatomic,assign)CDanmakuTextPosition cdanmuPostion;//弹幕位置
-
+@property(nonatomic,assign)NSTimeInterval startTime;//开始时间
 
 //新的初始化方法
 -(instancetype)initWithString:(NSString *)text withColor:(UIColor *)color;
@@ -34,6 +34,8 @@ typedef enum : NSUInteger {
 
 //设置弹幕位置
 -(void)setYPosition:(CGPoint)positionSize;
+//得到当前X点移动的距离
+-(Float32 )getXPoistion:(NSTimeInterval)nowTime;
 
 //移动
 -(void)move;

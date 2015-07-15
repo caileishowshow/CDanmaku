@@ -40,9 +40,11 @@
 -(void)setYPosition:(CGPoint)positionSize{
     self.frame = CGRectMake(positionSize.x, positionSize.y, self.frame.size.width, self.frame.size.height);
 }
+//-(void)setYPosition:(CGFloat)yPosition{
+//    self.frame = CGRectMake(positionSize.x, positionSize.y, self.frame.size.width, self.frame.size.height);    
+//}
 
-
-
+//动起来的动画
 -(void)move{
     //动画
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
@@ -56,12 +58,18 @@
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(-self.frame.size.width, self.frame.origin.y)];
     [self addAnimation:animation forKey:@"Comment"];
 }
+
+-(Float32)getXPoistion:(NSTimeInterval)nowTime{
+    return (375-(-self.frame.size.width))/5*(nowTime-_startTime);
+}
+
+
 //动画代理
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    CDanmakuText *layer = [anim valueForKey:@"animationLayer"];
+    CALayer *layer = [anim valueForKey:@"animationLayer"];
+    NSLog(@"%f",layer.contentsCenter.origin.x);
     [layer removeFromSuperlayer];
+
 }
-- (void)dealloc{
-    NSLog(@"aaa");
-}
+
 @end
